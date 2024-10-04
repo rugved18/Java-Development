@@ -1,0 +1,1 @@
+This Spring Boot project manages User data with CRUD operations, using PostgreSQL for storage. Postman serves as the client for testing API endpoints like user creation, updates, retrieval, and deletion.
