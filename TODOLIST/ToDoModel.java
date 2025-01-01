@@ -1,6 +1,6 @@
-//Model
 package ToDoList.demo.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -10,51 +10,49 @@ import jakarta.persistence.Id;
 public class ToDoModel {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int id;
-    String Title;
-    String Description;
-    String Completed;
+    private int id;
+    private String title;
+    private String description;
+    private String completed;
 
     public ToDoModel() {
+    }
+
+    public ToDoModel(String title, String description, String completed) {
+        this.title = title;
+        this.description = description;
+        this.completed = completed;
     }
 
     public int getId() {
         return id;
     }
 
-    public String getTitle() {
-        return Title;
-    }
-
-    public String getDescription() {
-        return Description;
-    }
-
-    public String getCompleted() {
-        return Completed;
-    }
-
     public void setId(int id) {
         this.id = id;
     }
 
+    public String getTitle() {
+        return title;
+    }
+
     public void setTitle(String title) {
-        Title = title;
+        this.title = title;
+    }
+
+    public String getDescription() {
+        return description;
     }
 
     public void setDescription(String description) {
-        Description = description;
+        this.description = description;
+    }
+
+    public String getCompleted() {
+        return completed;
     }
 
     public void setCompleted(String completed) {
-        Completed = completed;
-    }
-
-    public ToDoModel(int id, String title, String description, String completed) {
-        this.id = id;
-        Title = title;
-        Description = description;
-        Completed = completed;
+        this.completed = completed;
     }
 }
