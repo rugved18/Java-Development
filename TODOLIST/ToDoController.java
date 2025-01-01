@@ -23,7 +23,6 @@ public class ToDoController {
     @GetMapping("/{id}")
     public ResponseEntity<ToDoModel> GetById(@PathVariable int id){
         ToDoModel toDoModel = newService.FindToDoByID(id);
-
         if(toDoModel == null){
             return ResponseEntity.notFound().build();
         }
@@ -38,7 +37,6 @@ public class ToDoController {
     @PutMapping("/{id}")
     public ResponseEntity<ToDoModel> update(@PathVariable int id, @RequestBody ToDoModel toDoModel){
         ToDoModel updateTDo = newService.Update(id, toDoModel);
-
         if(updateTDo == null){
             return ResponseEntity.notFound().build();
         }
